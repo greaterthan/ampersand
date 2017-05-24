@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block pagetitle %}Ampersand{% endblock %}</title>
+        
+        <!-- responsive support -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A Global Housing Layer for the New World">
+
+        <!-- Le styles -->
+        {% include 'snippets/global_head_includes.html' %}
+
+        {% block extrahead %}
+        {% endblock %}
+    </head>
+
+    <body>
+        <div id="full-page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <nav class="navbar navbar-default" id="nav-network" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" 
+                            data-toggle="collapse" data-target="#main-navbar">
+                            
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+
+                        </button>
+                        <a href="/" class="navbar-brand"><span class="highlight">&amp;ccounts</span></a>
+                    </div>
+                    </nav>
+                </div> <!-- end row -->
+            </div> <!-- end container-fluid -->
+
+            {% block body %}
+            {% endblock %}
+        </div>
+
+    {% if GOOGLE_ANALYTICS_PROPERTY_ID %}
+      {% include "snippets/google_analytics.html" %}
+    {% endif %}
+
+  </body>
+</html>
+
